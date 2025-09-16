@@ -1,0 +1,106 @@
+/* --- Configurações Gerais e Variáveis (Boa prática) --- */
+:root {
+    --primary-color: #2563eb; /* Equivalente a text-blue-600 */
+    --text-color-light: #4b5563; /* Equivalente a text-gray-600 */
+    --text-color-dark: #1f2937;  /* Equivalente a text-gray-800 */
+    --background-color: #ffffff; /* Equivalente a bg-white */
+    --badge-bg-color: #dbeafe;   /* Equivalente a bg-blue-100 */
+    --badge-text-color: #1e40af; /* Equivalente a text-blue-800 */
+}
+
+/* --- Estilos do Header --- */
+.site-header {
+  /* --- A MÁGICA ACONTECE AQUI --- */
+  position: sticky; /* Faz o header "grudar" */
+  top: 0;           /* Gruda no topo da tela (distância 0 do topo) */
+  left: 0;          /* Garante que comece na borda esquerda */
+  width: 100%;      /* Ocupa 100% da largura da janela */
+  z-index: 1000;    /* Fica acima de outros conteúdos ao rolar */
+  
+  /* Estilos que você já tinha, garantindo que continuem funcionando */
+  background-color: var(--background-color);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* Sombra um pouco mais forte para destacar */
+}
+
+/* O resto do seu Header.css continua igual... */
+.header-container {
+  max-width: 1280px; /* O conteúdo *dentro* do header continua centralizado */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo e Título --- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Equivalente a space-x-2 */
+}
+
+.logo-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem; /* Equivalente a text-2xl */
+}
+
+.site-title {
+    font-size: 1.25rem; /* Equivalente a text-xl */
+    font-weight: 700;   /* Equivalente a font-bold */
+    color: var(--text-color-dark);
+}
+
+.ai-badge {
+    background-color: var(--badge-bg-color);
+    color: var(--badge-text-color);
+    font-size: 0.75rem; /* Equivalente a text-xs */
+    padding: 0.25rem 0.5rem; /* px-2 py-1 */
+    border-radius: 9999px; /* Equivalente a rounded-full */
+    margin-left: 0.5rem;
+}
+
+/* --- Navegação Principal --- */
+.main-nav {
+    display: none; /* Começa escondido (padrão mobile-first) */
+    gap: 2rem;     /* Equivalente a space-x-8 */
+}
+
+.nav-link {
+    color: var(--text-color-light);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Efeito suave para o hover */
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 500; /* Equivalente a font-medium */
+}
+
+/* --- Botão do Menu Mobile --- */
+.mobile-menu-button {
+    display: block; /* Visível em telas pequenas */
+    color: var(--text-color-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu-button .fas.fa-bars {
+    font-size: 1.25rem; /* Equivalente a text-xl */
+}
+
+/* --- Media Query para Telas Maiores (Desktop) --- */
+/* A classe 'md:' do Tailwind geralmente corresponde a uma largura de 768px */
+@media (min-width: 768px) {
+    .main-nav {
+        display: flex; /* Mostra a navegação principal */
+    }
+    .mobile-menu-button {
+        display: none; /* Esconde o botão de menu "hambúrguer" */
+    }
+}

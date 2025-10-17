@@ -1,42 +1,29 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/index.css ou src/App.css */
+
+/* Classes personalizadas para o layout Tailwind */
+.hero-gradient {
+    /* Gradiente de azul para o Hero Section */
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
 }
 
-.logo {
-  height: 5em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.card-hover:hover {
+    /* Efeito de elevação sutil no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transition-all {
+    /* Usada com card-hover para animação suave */
+    transition: all 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.ai-summary {
+    /* Estilo para o bloco de resumo da IA */
+    border-left: 4px solid #3b82f6;
+    background-color: #f8fafc;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* Garanta que o Tailwind base e utilities sejam incluídos se não estiverem já no seu projeto */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */

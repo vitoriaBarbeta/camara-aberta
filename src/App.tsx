@@ -1,5 +1,5 @@
 import './App.css';
-import votacoesData from './dados_votacoes.json';
+import votacoesData from ./dados_votacoes.json;
 
 // Passo 1: Criamos um "molde" que descreve um objeto de votação
 type Votacao = {

@@ -7,6 +7,10 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    /* ESSENCIAL PARA MIGRAR JAVASCRIPT E IMPORTAR JSON */
+    "allowJs": true,
+    "resolveJsonModule": true, // <-- Esta linha resolve o erro do JSON!
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -23,5 +27,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  
+  "include": ["src/**/*"] 
 }
